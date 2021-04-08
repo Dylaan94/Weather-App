@@ -16,7 +16,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_logic__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/logic */ \"./src/modules/logic.js\");\nconst myKey = config.WEATHER_API_KEY\n\n;\n\nconsole.log('webpack is working look at it')\nconsole.log(myKey)\n\n;(0,_modules_logic__WEBPACK_IMPORTED_MODULE_0__.test)();\n\n\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_logic__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/logic */ \"./src/modules/logic.js\");\nconst myKey = config.WEATHER_API_KEY\n\n;\n\nconsole.log('webpack is working look at it')\nconsole.log(myKey)\n\n\n;(0,_modules_logic__WEBPACK_IMPORTED_MODULE_0__.getByCityName)();\n(0,_modules_logic__WEBPACK_IMPORTED_MODULE_0__.test)();\n\n\n\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
 
 /***/ }),
 
@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
   \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"test\": () => (/* binding */ test)\n/* harmony export */ });\nlet test = () => {\n    console.log('logic is running')\n}\n\n\n\n//# sourceURL=webpack://weather-app/./src/modules/logic.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"test\": () => (/* binding */ test),\n/* harmony export */   \"getByCityName\": () => (/* binding */ getByCityName)\n/* harmony export */ });\nlet myKey = config.WEATHER_API_KEY\n\nlet test = () => {\n    console.log('logic is running')\n}\n\nlet getByCityName = async () => {\n    const response = await fetch(\n      \"https://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric&APPID=\" + myKey,\n      { mode: \"cors\" }\n    );\n    const weatherData = await response.json();\n    let newData = processData(weatherData)\n    console.log(weatherData)\n}\n\n// processes data and creates new object included the data needed\n// can add others to this later on\n\nlet processData = (weatherData) => {\n    const myData = {\n        condition: weatherData.weather[0].description,\n        currentTemp: Math.round(weatherData.main.temp)\n    }\n    console.log(myData)\n    return myData\n}\n\n\n\n//# sourceURL=webpack://weather-app/./src/modules/logic.js?");
 
 /***/ })
 
