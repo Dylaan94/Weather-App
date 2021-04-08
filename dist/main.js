@@ -16,7 +16,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_logic__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/logic */ \"./src/modules/logic.js\");\n\n\nconsole.log('webpack is working look at it')\n\n;(0,_modules_logic__WEBPACK_IMPORTED_MODULE_0__.test)();\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_logic__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/logic */ \"./src/modules/logic.js\");\nconst myKey = config.WEATHER_API_KEY\n\n;\n\nconsole.log('webpack is working look at it')\nconsole.log(myKey)\n\n;(0,_modules_logic__WEBPACK_IMPORTED_MODULE_0__.test)();\n\n\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
 
 /***/ }),
 
