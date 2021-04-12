@@ -1,12 +1,9 @@
 let myKey = config.WEATHER_API_KEY
 
-let test = () => {
-    console.log('logic is running')
-}
+let getByCityName = async (searchValue) => {
 
-let getByCityName = async () => {
     const response = await fetch(
-      "https://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric&APPID=" + myKey,
+      "https://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&units=metric&APPID=" + myKey,
       { mode: "cors" }
     );
     const weatherData = await response.json();
@@ -19,14 +16,18 @@ let getByCityName = async () => {
 
 let processData = (weatherData) => {
     const myData = {
+        name: weatherData.name,
         condition: weatherData.weather[0].description,
-        currentTemp: Math.round(weatherData.main.temp)
+        currentTemp: Math.round(weatherData.main.temp),
+        tempMax: weatherData.main.temp_max,
+        tempMin: weatherData.main.temp_min,
+        humidity: weatherData.main.humidity,
+        windSpeed: weatherData.wind.speed,
     }
     console.log(myData)
     return myData
 }
 
 export {
-    test,
     getByCityName
 }
