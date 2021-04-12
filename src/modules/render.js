@@ -5,8 +5,7 @@ let renderData = (myData) => {
   const conditionDiv = document.getElementById("conditionDiv");
   const placeDiv = document.getElementById("placeDiv");
   const tempDiv = document.getElementById("tempDiv");
-  const lowTempDiv = document.getElementById("lowTempDiv");
-  const highTempDiv = document.getElementById("highTempDiv");
+  const lowHighTempDiv = document.getElementById("lowHighTempDiv");
 
   const feelsLikeDiv = document.getElementById("feelsLikeDiv");
   const windDiv = document.getElementById("windDiv");
@@ -14,12 +13,17 @@ let renderData = (myData) => {
 
   conditionDiv.innerHTML = myData.condition;
   placeDiv.innerHTML = myData.name;
-  tempDiv.innerHTML = myData.currentTemp;
-  lowTempDiv.innerHTML = 'low: ' + myData.tempMin;
-  highTempDiv.innerHTML = 'high: ' + myData.tempMax;
-  feelsLikeDiv.innerHTML = "feels like: " + myData.feelsLike;
-  windDiv.innerHTML = "wind speed: " + myData.windSpeed;
-  humidityDiv.innerHTML = "humidity: " + myData.humidity;
+  tempDiv.innerHTML = myData.currentTemp + "°";
+  lowHighTempDiv.innerHTML =
+    "L:" +
+    Math.round(myData.tempMin) +
+    "°" +
+    " H:" +
+    Math.round(myData.tempMax) +
+    "°";
+  feelsLikeDiv.innerHTML = "feels like: " + Math.round(myData.feelsLike) + "°";
+  windDiv.innerHTML = "wind speed: " + Math.round(myData.windSpeed) + " mph";
+  humidityDiv.innerHTML = "humidity: " + myData.humidity + "%";
 };
 
 export { renderData };

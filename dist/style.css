@@ -1,0 +1,75 @@
+* {
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  height: 15vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1em;
+}
+
+.title {
+  margin-right: auto;
+}
+
+.searchBar {
+}
+
+.displayContainer {
+  height: auto;
+  display: grid;
+  padding-left: 1em;
+  grid-template-columns: 10vw 10vw 10vw 10vw 10vw 10vw 40vw;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "condition condition condition condition . . ."
+    "place place place place place . . "
+    "temp feelsLike feelsLike . . . ."
+    "temp wind wind . . . ."
+    "lowHighTemp humidity humidity . . . .";
+}
+
+.conditionDiv {
+  grid-area: condition;
+  font-size: 1.5em;
+}
+
+.placeDiv {
+  grid-area: place;
+  font-size: 5em;
+  font-weight: 900;
+}
+
+.tempDiv {
+  grid-area: temp;
+  font-size: 3.5em;
+  border-right: black solid 2.5px;
+  text-align: center;
+}
+
+.lowHighTempDiv {
+  grid-area: lowHighTemp;
+  font-size: 1em;
+  font-weight: 700;
+  text-align: center;
+  border-right: black solid 2.5px;
+}
+
+.feelsLikeDiv {
+  grid-area: feelsLike;
+  margin-left: 0.5em;
+}
+
+.windDiv {
+  grid-area: wind;
+  margin-left: 0.5em;
+}
+
+.humidityDiv {
+  grid-area: humidity;
+  margin-left: 0.5em;
+}
