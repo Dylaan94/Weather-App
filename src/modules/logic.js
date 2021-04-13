@@ -1,4 +1,4 @@
-import { renderData } from "./render";
+import { renderData, renderBackground } from "./render";
 
 let myKey = config.WEATHER_API_KEY;
 
@@ -20,7 +20,6 @@ let getByCityName = async (searchValue) => {
   }
 };
 
-
 // processes data and creates new object included the data needed
 // can add others to this later on
 
@@ -34,9 +33,13 @@ let processData = (weatherData) => {
     tempMin: weatherData.main.temp_min,
     humidity: weatherData.main.humidity,
     windSpeed: weatherData.wind.speed,
+    weatherMain: weatherData.weather[0].main
   };
+
+  let weatherDescription = myData.weatherMain;
   console.log(myData);
   renderData(myData); // send to renderer
+  renderBackground(weatherDescription);
   return myData;
 };
 

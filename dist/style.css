@@ -4,6 +4,9 @@
   margin: 0;
 }
 
+body {
+}
+
 .header {
   height: 15vh;
   display: flex;
