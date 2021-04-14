@@ -8,11 +8,14 @@ body {
 }
 
 .header {
-  height: 15vh;
+  height: 5vh;
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 1em;
+  background: rgb(0,0,0, 0.4);
+  border-radius: 5px;
+  color: white;
 }
 
 .title {
@@ -26,6 +29,7 @@ body {
   height: auto;
   display: grid;
   padding-left: 1em;
+  padding-top: 15vh;
   grid-template-columns: 10vw 10vw 10vw 10vw 10vw 10vw 40vw;
   grid-template-rows: auto;
   grid-template-areas:

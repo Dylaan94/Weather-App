@@ -1,11 +1,14 @@
 //API keys
 const myKey = config.WEATHER_API_KEY
+
+// variables
+const submitBtn = document.getElementById("submitBtn");
 let defaultCity = 'Birmingham,uk'
 
-import { test, getByCityName } from './modules/logic'
+// imports
+import { getByCityName } from './modules/logic'
 
-const submitBtn = document.getElementById('submitBtn')
-
+// event listeners
 submitBtn.addEventListener('click', () => {
     let searchValue = document.getElementById('searchValue').value
     console.log(searchValue)
@@ -16,10 +19,7 @@ submitBtn.addEventListener('click', () => {
     console.log(searchValue);
 })
 
-
 // Run Birmingham if no data input
 getByCityName(defaultCity);
-
-//getByCityName();
 
 
