@@ -1,3 +1,4 @@
+// display data on the DOM
 let renderData = (myData) => {
   console.log("render data running");
 
@@ -26,6 +27,7 @@ let renderData = (myData) => {
   humidityDiv.innerHTML = "humidity: " + myData.humidity + "%";
 };
 
+// change background based on weather description
 let renderBackground = (weatherMain) => {
   console.log("renderbackground is running");
   console.log(weatherMain);

@@ -1,6 +1,6 @@
 # weather-app #
 
-# Weather App drawing on Open Weather API #
+# Weather App using Open Weather API #
 
 ## Main features ##
 * Displays weather, location name, temperature (inc. hi and low), feels like, wind speed and humidity based on search
@@ -12,6 +12,7 @@
 
 ## Things I want to add ##
 * Ability to change background based on time of day
+* Improve background images and styling
 
 ## Things I want to learn ##
 * How to make my CSS more responsive with media queries as sizing is only fit for monitors and ipads at the moment

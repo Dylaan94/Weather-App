@@ -11,7 +11,7 @@ let getByCityName = async (searchValue) => {
     { mode: "cors" }
   );
   // error handling
-  if (response.status === 400) {
+  if (response.status === 400 || response.status === 404) {
     return error();
   } else {
     const weatherData = await response.json();
@@ -20,8 +20,7 @@ let getByCityName = async (searchValue) => {
   }
 };
 
-// processes data and creates new object included the data needed
-// can add others to this later on
+// processes data and creates new object with the data I want to use
 
 let processData = (weatherData) => {
   const myData = {
@@ -44,7 +43,8 @@ let processData = (weatherData) => {
 };
 
 let error = () => {
-  console.log("error bro");
+  console.log("theres an error bro");
+  alert('error, please try another city')
 };
 
 export { getByCityName };
